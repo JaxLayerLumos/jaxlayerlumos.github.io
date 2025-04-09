@@ -44,7 +44,7 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column is-half">
-          <img src="static/images/layerlumos.jpg" alt="JaxLayerLumos" class="blend-img-background center-image">
+          <img src="static/images/jaxlayerlumos.jpg" alt="JaxLayerLumos" class="blend-img-background center-image">
         </div>
       </div>
 
@@ -115,7 +115,7 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-          JaxLayerLumos is an open-source software designed for scientists, engineers, and researchers in optics and photonics. It provides a powerful yet intuitive interface for calculating the reflection and transmission (RT) of light through multi-layer optical structures. By inputting the refractive index, thickness of each layer, and the frequency vector, users can analyze how light interacts with layered materials, including the option to adjust for incidence angles.
+          JaxLayerLumos is open-source transfer-matrix method (TMM) software designed for scientists, engineers, and researchers in optics and photonics. It provides a powerful yet intuitive interface for calculating the reflection and transmission (RT) of light through multi-layer optical structures. By inputting the refractive index, thickness of each layer, and the frequency vector, users can analyze how light interacts with layered materials, including the option to adjust for incidence angles.
           <br>
           <br>
 
@@ -128,133 +128,73 @@
 </section>
 
 
-<section class="hero is-small">
-  <div class="hero-body">
-    <div class="container">
-      <div class="columns is-centered has-text-centered">
-        <div class="column is-four-fifths">
-          <h2 class="title is-3">Comparisons to Ansys Optics</h2>
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Features</h2>
+        <div class="content has-text-justified">
+          <ul>
+                <li>Gradient Calculation: Calculates the gradients over any variables involved in RT, powered by JAX.</li>
+                <li>Flexibility: Accommodates a wide range of materials and structures by allowing users to specify complex refractive indices, layer thicknesses, and frequency vectors.</li>
+                <li>Angle of Incidence Support: Expands simulation capabilities to include angled light incidence, providing more detailed analysis for advanced optical designs.</li>
+                <li>Open Source and Community-Driven: Encourages contributions and feedback from the community, ensuring continuous improvement and innovation.</li>
+                <li>Comprehensive Material Database: Includes a growing database of materials with their optical properties, streamlining the simulation setup process.</li>
+          </ul>
         </div>
       </div>
+    </div>
+  </div>
+</section>
 
-      <div id="results-carousel" class="carousel results-carousel">
 
-        <!-- start -->
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_10.0nm_angle_0.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (10 nm), Incident Angle 0&deg;
-          </h2>
+<section class="section hero is-light">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Installation</h2>
+        <div class="content has-text-justified">
+          JaxLayerLumos can be easily installed by the following command using the [PyPI repository](https://pypi.org/project/jaxlayerlumos/).<br>
+
+          <code>pip install jaxlayerlumos</code><br>
+
+          Alternatively, JaxLayerLumos can be installed from source.
+
+          <code>pip install .</code><br>
+
+          In addition, we support three installation modes, `dev`, `benchmarking`, and `examples`, where `dev` is defined for installing the packages required for development, `benchmarking` is for installing the packages required for benchmarking against differnt TMM software programs, and `examples` is needed for running the examples included in the `examples` directory. One of these modes can be used by commanding `pip install .[dev]`, `pip install .[benchmarking]`, or `pip install .[examples]`.
         </div>
+      </div>
+    </div>
+  </div>
+</section>
 
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_10.0nm_angle_45.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (10 nm), Incident Angle 45&deg;
-          </h2>
+
+<section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Examples</h2>
+        <div class="content has-text-justified">
+          A collection of examples in the `examples` directory exhibits various use cases and capabilities of our software. We provide the following examples:
+
+          <ol>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/angle-variation.ipynb" target="_blank">Reflection Spectra over Wavelengths Varying Incidence Angles</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/color-conversion.ipynb" target="_blank">Color Conversion</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/color-exploration.ipynb" target="_blank">Color Exploration with Thin-Film Structures</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/gradient-computation.ipynb" target="_blank">Gradient Computation</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/light-source-visualization.ipynb" target="_blank">Visualization of Light Sources</a></li>
+
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/n-k-extrapolation.ipynb" target="_blank">Plotting of Optical Constants</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/optimization-bayeso.ipynb" target="_blank">Thin-Film Structure Optimization with Bayesian Optimization</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/optimization-dog.ipynb" target="_blank">Thin-Film Structure Optimization with DoG Optimizer</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/radar-design.ipynb" target="_blank">Reflection Spectra over Frequencies for Radar Design</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/solar-cell-analysis.ipynb" target="_blank">Analysis of Solar Cells</a></li>
+
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/thickness-variation.ipynb" target="_blank">Transmission Spectra over Wavelengths Varying Thicknesses</a></li>
+                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/triple-junction-solar-cells.ipynb" target="_blank">Triple Junction Solar Cells</a></li>
+          </ol>
         </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_10.0nm_angle_75.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (10 nm), Incident Angle 75&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_10.0nm_angle_89.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (10 nm), Incident Angle 89&deg;
-          </h2>
-        </div>
-
-        <!-- start -->
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_100.0nm_angle_0.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (100 nm), Incident Angle 0&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_100.0nm_angle_45.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (100 nm), Incident Angle 45&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_100.0nm_angle_75.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (100 nm), Incident Angle 75&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_100.0nm_angle_89.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (100 nm), Incident Angle 89&deg;
-          </h2>
-        </div>
-
-        <!-- start -->
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_10.0nm_Al_11.0nm_Ag_12.0nm_angle_0.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (10 nm) - Al (11 nm) - Ag (12 nm), Incident Angle 0&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_10.0nm_Al_11.0nm_Ag_12.0nm_angle_45.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (10 nm) - Al (11 nm) - Ag (12 nm), Incident Angle 45&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_10.0nm_Al_11.0nm_Ag_12.0nm_angle_75.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (10 nm) - Al (11 nm) - Ag (12 nm), Incident Angle 75&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_Ag_10.0nm_Al_11.0nm_Ag_12.0nm_angle_89.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            Ag (10 nm) - Al (11 nm) - Ag (12 nm), Incident Angle 89&deg;
-          </h2>
-        </div>
-
-        <!-- start -->
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_TiO2_20.0nm_Ag_5.0nm_TiO2_30.0nm_angle_0.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            TiO<sub>2</sub> (20 nm) - Ag (5 nm) - TiO<sub>2</sub> (30 nm), Incident Angle 0&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_TiO2_20.0nm_Ag_5.0nm_TiO2_30.0nm_angle_45.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            TiO<sub>2</sub> (20 nm) - Ag (5 nm) - TiO<sub>2</sub> (30 nm), Incident Angle 45&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_TiO2_20.0nm_Ag_5.0nm_TiO2_30.0nm_angle_75.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            TiO<sub>2</sub> (20 nm) - Ag (5 nm) - TiO<sub>2</sub> (30 nm), Incident Angle 75&deg;
-          </h2>
-        </div>
-
-        <div class="item" style="text-align: center;">
-          <img src="static/images/comparisons/tmm_TiO2_20.0nm_Ag_5.0nm_TiO2_30.0nm_angle_89.0_deg.png" alt="" style="max-width: 50%;"/>
-          <h2 class="subtitle has-text-centered">
-            TiO<sub>2</sub> (20 nm) - Ag (5 nm) - TiO<sub>2</sub> (30 nm), Incident Angle 89&deg;
-          </h2>
-        </div>
-
       </div>
     </div>
   </div>
@@ -268,7 +208,6 @@
         <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos" target="_blank">GitHub: JaxLayerLumos</a></li>
         <li><a href="https://pypi.org/project/jaxlayerlumos/" target="_blank">PyPI: JaxLayerLumos</a></li>
         <li><a href="https://zenodo.org/doi/10.5281/zenodo.12602789" target="_blank">Zenodo: JaxLayerLumos</a></li>
-        <li><a href="https://github.com/JaxLayerLumos/JaxColors" target="_blank">GitHub: JaxColors</a></li>
     </ul>
   </div>
 </section>
