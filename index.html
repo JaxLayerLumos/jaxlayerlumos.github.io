@@ -98,6 +98,13 @@
                 </a>
               </span>
 
+              <span class="link-block">
+                <a href="https://jaxlayerlumos.readthedocs.io/en/joss/" target="_blank" class="external-link button is-normal is-rounded is-dark">
+                  <span class="icon"><i class="fab fa-book"></i></span>
+                  <span>Documentation</span>
+                </a>
+              </span>
+
             </div>
           </div>
 
@@ -162,7 +169,7 @@
 
           <code>pip install .</code><br><br>
 
-          In addition, we support three installation modes, <code>dev</code>, <code>benchmarking</code>, and <code>examples</code>, where <code>dev</code> is defined for installing the packages required for development, <code>benchmarking</code> is for installing the packages required for benchmarking against differnt TMM software programs, and <code>examples</code> is needed for running the examples included in the <code>examples</code> directory. One of these modes can be used by commanding <code>pip install .[dev]</code>, <code>pip install .[benchmarking]</code>, or <code>pip install .[examples]</code>.
+          In addition, we support three installation modes, <code>dev</code>, <code>benchmarking</code>, and <code>examples</code>, where <code>dev</code> is defined for installing the packages required for development and software testing, <code>benchmarking</code> is for installing the packages required for benchmarking against differnt TMM software programs, and <code>examples</code> is needed for running the examples included in the <code>examples</code> directory. One of these modes can be used by commanding <code>pip install .[dev]</code>, <code>pip install .[benchmarking]</code>, or <code>pip install .[examples]</code>.
         </div>
       </div>
     </div>
@@ -205,9 +212,9 @@
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
-        <h2 class="title is-3">Supported Materials</h2>
+        <h2 class="title is-3">Software Testing and Test Automation</h2>
         <div class="content has-text-justified">
-          Materials supported by our software are described in <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/markdowns/MATERIALS.md" target="_blank">this file</a>. For example, Ag, Air, Al2O3, Al, aSi, Au, BK7, Cr, cSi, Cu, Fe, FusedSilica, GaAs, GaInP, GaP, Ge, InP, ITO, Mg, Mn, Ni, Pb, Pd, Pt, Sapphire, Si3N4, SiO2, TiN, TiO2, Ti, W, ZnO, Zn are included in JaxLayerLumos.
+          We provide a variety of test files in the <code>tests</code> directory. Before running the test files, the required packages should be installed by using <code>pip install .[dev]</code>. They can be run by commanding <code>pytest tests/</code>. Moreover, these test files are automatically tested via GitHub Actions, of which the configuration is defined in <code>.github/workflows/pytest.yml</code>.
         </div>
       </div>
     </div>
@@ -216,6 +223,22 @@
 
 
 <section class="section hero">
+  <div class="container is-max-desktop">
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3">Supported Materials</h2>
+        <div class="content has-text-justified">
+          Materials supported by our software are described in <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/markdowns/MATERIALS.md" target="_blank">this file</a>. For example, Ag, Air, Al2O3, Al, aSi, Au, BK7, Cr, cSi, Cu, Fe, FusedSilica, GaAs, GaInP, GaP, Ge, InP, ITO, Mg, Mn, Ni, Pb, Pd, Pt, Sapphire, Si3N4, SiO2, TiN, TiO2, Ti, W, ZnO, Zn are included in JaxLayerLumos.<br><br>
+
+          JaxLayerLumos includes a growing library of materials, which are specified using either complex refractive indices or complex permittivities and permeabilities, which can be sourced from the literature or specified by users based on experimental data. When only complex refractive indices are provided, magnetic effects are assumed to be negligible, and the relative permeability is set to unity, an assumption typically valid at optical frequencies. In the RF and microwave regimes, the electromagnetic properties of metals are derived from their electrical conductivity and magnetic susceptibility, while dielectrics are generally modeled with constant permittivity and negligible loss.
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section class="section hero is-light">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -229,7 +252,7 @@
 </section>
 
 
-<section class="section hero is-light">
+<section class="section hero">
   <div class="container is-max-desktop">
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
@@ -247,7 +270,7 @@
 </section>
 
 
-<section class="section" id="BibTeX">
+<section class="section is-light" id="BibTeX">
   <div class="container is-max-desktop content">
     <h2 class="title">Related Links</h2>
     <ul>
