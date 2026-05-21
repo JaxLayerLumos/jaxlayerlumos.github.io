@@ -178,9 +178,7 @@ pre {
   margin: 0 0 1rem;
 }
 
-.badge-row,
-.hero-actions,
-.related-links {
+.hero-actions {
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -188,12 +186,6 @@ pre {
   justify-content: center;
 }
 
-.badge-row {
-  margin: 0.95rem 0 1.2rem;
-}
-
-.badge-row a,
-.related-links a,
 .material-cloud span {
   background: #edf5f4;
   border: 1px solid #cfe1df;
@@ -205,14 +197,12 @@ pre {
   padding: 0.48rem 0.62rem;
 }
 
-.badge-row a:nth-child(2n),
 .material-cloud span:nth-child(3n) {
   background: #f5f0e7;
   border-color: #eadcc4;
   color: var(--amber);
 }
 
-.badge-row a:nth-child(3n),
 .material-cloud span:nth-child(4n) {
   background: #eef2fb;
   border-color: #d7e0f5;
@@ -595,11 +585,6 @@ pre {
   grid-template-columns: minmax(0, 0.75fr) minmax(360px, 1.25fr);
 }
 
-.related-links {
-  justify-content: flex-start;
-  margin-top: 1rem;
-}
-
 .citation-block {
   margin: 0;
 }
@@ -698,13 +683,11 @@ pre {
     text-align: left;
   }
 
-  .badge-row,
   .hero-actions {
     align-items: stretch;
     flex-direction: column;
   }
 
-  .badge-row a,
   .hero-actions .button {
     justify-content: center;
     width: 100%;
