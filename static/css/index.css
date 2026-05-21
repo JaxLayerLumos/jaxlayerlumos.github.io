@@ -220,29 +220,43 @@ pre {
   height: auto;
   min-height: 2.65rem;
   padding: 0.72rem 0.95rem;
+  transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease;
 }
 
-.button.primary-action {
-  background: var(--ink);
-  border-color: var(--ink);
-  color: var(--paper);
-}
-
-.button.primary-action:hover {
-  background: var(--teal-dark);
-  border-color: var(--teal-dark);
-  color: var(--paper);
-}
-
-.button.secondary-action {
-  background: var(--paper);
-  border-color: var(--line);
-  color: var(--ink);
-}
-
-.button.secondary-action:hover {
-  border-color: var(--teal);
+.hero-actions .button:nth-child(1) {
+  background: #edf5f4;
+  border-color: #cfe1df;
   color: var(--teal-dark);
+}
+
+.hero-actions .button:nth-child(1):hover {
+  background: #dff0ee;
+  border-color: #a8d0cc;
+  color: var(--teal-dark);
+}
+
+.hero-actions .button:nth-child(2) {
+  background: #eef2fb;
+  border-color: #d7e0f5;
+  color: var(--cobalt);
+}
+
+.hero-actions .button:nth-child(2):hover {
+  background: #e2e9f9;
+  border-color: #b7c8ed;
+  color: var(--cobalt);
+}
+
+.hero-actions .button:nth-child(3) {
+  background: #f5f0e7;
+  border-color: #eadcc4;
+  color: var(--amber);
+}
+
+.hero-actions .button:nth-child(3):hover {
+  background: #efe5d4;
+  border-color: #ddc79f;
+  color: var(--amber);
 }
 
 .install-strip {
