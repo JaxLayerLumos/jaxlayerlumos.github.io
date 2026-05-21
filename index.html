@@ -1,16 +1,16 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="description" content="JaxLayerLumos: A JAX-based Differentiable Optical and Radio Frequency Simulator for Multilayer Structures">
-  <meta property="og:title" content="JaxLayerLumos: A JAX-based Differentiable Optical and Radio Frequency Simulator for Multilayer Structures"/>
-  <meta property="og:description" content="JaxLayerLumos: A JAX-based Differentiable Optical and Radio Frequency Simulator for Multilayer Structures"/>
-  <meta property="og:url" content="https://jaxlayerlumos.github.io"/>
-
-  <meta name="keywords" content="JaxLayerLumos, Transfer-Matrix Method, A JAX-based Efficient Transfer-Matrix Method Framework, Optical Simulations, JAX">
+  <meta name="description" content="JaxLayerLumos: A JAX-based differentiable optical and radio frequency simulator for multilayer structures.">
+  <meta property="og:title" content="JaxLayerLumos: A JAX-based Differentiable Optical and Radio Frequency Simulator for Multilayer Structures">
+  <meta property="og:description" content="Open-source transfer-matrix method software for differentiable optical and RF multilayer simulations.">
+  <meta property="og:url" content="https://jaxlayerlumos.github.io">
+  <meta property="og:image" content="https://jaxlayerlumos.github.io/static/images/jaxlayerlumos.jpg">
+  <meta name="keywords" content="JaxLayerLumos, transfer-matrix method, JAX, optical simulations, RF simulations, photonics, differentiable simulation">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>JaxLayerLumos: A JAX-based Differentiable Optical and Radio Frequency Simulator for Multilayer Structures</title>
+  <title>JaxLayerLumos | Differentiable Optical and RF Multilayer Simulation</title>
 
   <link rel="icon" type="image/x-icon" href="static/favicon/favicon.ico">
   <link rel="apple-touch-icon" sizes="180x180" href="static/favicon/apple-touch-icon.png">
@@ -18,309 +18,378 @@
   <link rel="icon" type="image/png" sizes="16x16" href="static/favicon/favicon-16x16.png">
   <link rel="manifest" href="static/favicon/site.webmanifest">
 
-  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="static/css/bulma.min.css">
-  <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
-  <link rel="stylesheet" href="static/css/bulma-slider.min.css">
   <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
-  <link rel="stylesheet"
-  href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
   <link rel="stylesheet" href="static/css/index.css">
 
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-  <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
   <script defer src="static/js/fontawesome.all.min.js"></script>
-  <script src="static/js/bulma-carousel.min.js"></script>
-  <script src="static/js/bulma-slider.min.js"></script>
-  <script src="static/js/index.js"></script>
 </head>
 
 <body>
+  <header class="site-header">
+    <div class="site-header__inner">
+      <a class="brand-mark" href="#" aria-label="JaxLayerLumos home">
+        <img src="static/images/jaxlayerlumos_reduced.jpg" alt="">
+        <span>JaxLayerLumos</span>
+      </a>
+      <nav class="site-nav" aria-label="Primary navigation">
+        <a href="#overview">Overview</a>
+        <a href="#features">Features</a>
+        <a href="#examples">Examples</a>
+        <a href="#citation">Citation</a>
+      </nav>
+    </div>
+  </header>
 
+  <main>
+    <section class="hero-section">
+      <div class="container is-max-desktop">
+        <div class="hero-panel">
+          <p class="eyebrow">✨ Open-source differentiable TMM simulator</p>
+          <img src="static/images/jaxlayerlumos.jpg" alt="JaxLayerLumos" class="hero-logo">
+          <h1>JaxLayerLumos</h1>
+          <p class="hero-subtitle">
+            A JAX-based differentiable optical and radio frequency simulator for multilayer structures.
+          </p>
 
-<section class="hero">
-  <div class="hero-body">
-    <div class="container is-max-desktop">
-      <div class="columns is-centered">
-        <div class="column is-half">
-          <img src="static/images/jaxlayerlumos.jpg" alt="JaxLayerLumos" class="blend-img-background center-image">
+          <div class="publication-authors">
+            <span class="author-block">
+              <a href="https://www.linkedin.com/in/mingxuan-l-0009b61ab/" target="_blank" rel="noopener noreferrer">Mingxuan Li*</a>
+            </span>
+            <span class="author-block">
+              <a href="https://jungtaekkim.github.io" target="_blank" rel="noopener noreferrer">Jungtaek Kim*</a>
+            </span>
+            <span class="author-block">
+              <a href="http://lamp.pitt.edu" target="_blank" rel="noopener noreferrer">Paul W. Leu</a>
+            </span>
+          </div>
+          <p class="affiliation">University of Pittsburgh | *Equal contribution</p>
+
+          <div class="badge-row" aria-label="Project badges">
+            <a href="https://joss.theoj.org/papers/10.21105/joss.08572" target="_blank" rel="noopener noreferrer">JOSS</a>
+            <a href="https://doi.org/10.5281/zenodo.12602789" target="_blank" rel="noopener noreferrer">Zenodo DOI</a>
+            <a href="https://pypi.org/project/jaxlayerlumos/" target="_blank" rel="noopener noreferrer">PyPI</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/releases" target="_blank" rel="noopener noreferrer">Release</a>
+            <a href="https://opensource.org/licenses/MIT" target="_blank" rel="noopener noreferrer">MIT</a>
+            <a href="https://jaxlayerlumos.readthedocs.io" target="_blank" rel="noopener noreferrer">Docs</a>
+          </div>
+
+          <div class="hero-actions">
+            <a href="https://joss.theoj.org/papers/10.21105/joss.08572" target="_blank" rel="noopener noreferrer" class="button primary-action">
+              <span class="icon"><i class="fas fa-file-alt"></i></span>
+              <span>Paper</span>
+            </a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos" target="_blank" rel="noopener noreferrer" class="button secondary-action">
+              <span class="icon"><i class="fab fa-github"></i></span>
+              <span>GitHub</span>
+            </a>
+            <a href="https://jaxlayerlumos.readthedocs.io" target="_blank" rel="noopener noreferrer" class="button secondary-action">
+              <span class="icon"><i class="fas fa-book-open"></i></span>
+              <span>Documentation</span>
+            </a>
+          </div>
+
+          <div class="install-strip" aria-label="Install command">
+            <span>Install</span>
+            <code>pip install jaxlayerlumos</code>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="columns is-centered">
-        <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title">JaxLayerLumos: A JAX-based Differentiable Optical and Radio Frequency Simulator for Multilayer Structures</h1>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">
-              <a href="https://www.linkedin.com/in/mingxuan-l-0009b61ab/" target="_blank">Mingxuan Li*</a>,
-            </span>
-
-            <span class="author-block">
-              <a href="https://jungtaekkim.github.io" target="_blank">Jungtaek Kim*</a>,
-            </span>
-
-            <span class="author-block">
-              <a href="http://lamp.pitt.edu" target="_blank">Paul W. Leu</a>
-            </span>
-          </div>
-
-          <div class="is-size-5 publication-authors">
-            <span class="author-block">University of Pittsburgh</span>
-          </div>
-
-          <div class="is-size-6 publication-authors">
-            <span class="author-block">*These authors contributed equally.</span>
-          </div>
-
-          <div class="column has-text-centered">
-            <div class="publication-links">
-
-              <span class="link-block">
-                <a href="https://joss.theoj.org/papers/10.21105/joss.08572" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-file"></i></span>
-                  <span>Paper</span>
-                </a>
-              </span>
-
-              <span class="link-block">
-                <a href="https://github.com/JaxLayerLumos/JaxLayerLumos" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fab fa-github"></i></span>
-                  <span>GitHub</span>
-                </a>
-              </span>
-
-              <span class="link-block">
-                <a href="https://jaxlayerlumos.readthedocs.io" target="_blank" class="external-link button is-normal is-rounded is-dark">
-                  <span class="icon"><i class="fas fa-book"></i></span>
-                  <span>Documentation</span>
-                </a>
-              </span>
-
+    <section class="section compact-section" id="overview">
+      <div class="container is-max-desktop">
+        <div class="section-grid overview-grid">
+          <div>
+            <p class="section-kicker">Overview</p>
+            <h2 class="section-title">Fast multilayer simulations, built for research workflows.</h2>
+            <p class="section-copy">
+              JaxLayerLumos is open-source transfer-matrix method software for scientists, engineers, and researchers in optics, photonics, RF, and microwave design. Define refractive indices, layer thicknesses, frequency vectors, and incidence angles, then calculate reflection and transmission with a lightweight JAX workflow.
+            </p>
+            <div class="metric-row">
+              <div>
+                <strong>JAX</strong>
+                <span>Autodiff-ready</span>
+              </div>
+              <div>
+                <strong>Optical + RF</strong>
+                <span>Broad regimes</span>
+              </div>
+              <div>
+                <strong>MIT</strong>
+                <span>Open source</span>
+              </div>
             </div>
           </div>
-
+          <figure class="visual-frame">
+            <img src="static/images/TMM.png" alt="Transfer-matrix method schematic for multilayer structures">
+          </figure>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
+    <section class="section compact-section section-tint" id="features">
+      <div class="container is-max-desktop">
+        <div class="section-heading">
+          <p class="section-kicker">Features</p>
+          <h2 class="section-title">Compact API, practical physics, differentiable core.</h2>
+        </div>
 
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Overview</h2>
-        <div class="content has-text-justified">
+        <div class="feature-grid">
+          <article class="feature-card">
+            <span class="feature-icon">⚡</span>
+            <h3>Lightweight and efficient</h3>
+            <p>Runs rapid TMM calculations without the overhead of large commercial tools.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">AD</span>
+            <h3>Gradient calculation</h3>
+            <p>Calculates gradients over variables involved in reflection and transmission.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">📡</span>
+            <h3>Optical and RF support</h3>
+            <p>Handles optical, infrared, microwave, and radio-wave simulation settings.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">🧪</span>
+            <h3>Material database</h3>
+            <p>Includes optical properties and RF parameters for common metals and dielectrics.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">GPU</span>
+            <h3>Accelerator friendly</h3>
+            <p>Uses JAX to support GPU and TPU execution for suitable workloads.</p>
+          </article>
+          <article class="feature-card">
+            <span class="feature-icon">MIT</span>
+            <h3>Community-driven</h3>
+            <p>Open-source code, documentation, examples, tests, and contribution guidelines.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section">
+      <div class="container is-max-desktop">
+        <div class="section-heading">
+          <p class="section-kicker">Comparison</p>
+          <h2 class="section-title">Designed for differentiable multilayer modeling.</h2>
+        </div>
+
+        <div class="table-shell">
+          <table class="comparison-table">
+            <thead>
+              <tr>
+                <th>Capability</th>
+                <th>Ansys Optics</th>
+                <th>TMM-Fast</th>
+                <th>tmm</th>
+                <th>JaxLayerLumos</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Lightweight</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>Yes</td>
+                <td class="positive">Yes</td>
+              </tr>
+              <tr>
+                <td>Gradient support</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td>No</td>
+                <td class="positive">Yes</td>
+              </tr>
+              <tr>
+                <td>GPU / TPU support</td>
+                <td>No / No</td>
+                <td>GPU only</td>
+                <td>No / No</td>
+                <td class="positive">GPU + TPU</td>
+              </tr>
+              <tr>
+                <td>Position-dependent absorption</td>
+                <td>No</td>
+                <td>No</td>
+                <td>Yes</td>
+                <td class="positive">Yes</td>
+              </tr>
+              <tr>
+                <td>Radio wave simulations</td>
+                <td>Limited</td>
+                <td>No</td>
+                <td>No</td>
+                <td class="positive">Yes, with magnetic materials</td>
+              </tr>
+              <tr>
+                <td>License</td>
+                <td>Commercial</td>
+                <td>MIT</td>
+                <td>BSD-3-Clause</td>
+                <td class="positive">MIT</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="note">
+          TPU results may show reduced numerical precision because TPUs are optimized for low-precision computation.
+        </p>
+      </div>
+    </section>
+
+    <section class="section compact-section section-tint" id="examples">
+      <div class="container is-max-desktop">
+        <div class="section-grid examples-grid">
+          <div>
+            <p class="section-kicker">Examples</p>
+            <h2 class="section-title">Notebooks for spectra, materials, color, optimization, and devices.</h2>
+            <p class="section-copy">
+              The examples directory covers practical use cases from thin-film color exploration to solar cells, RF radar design, and gradient-based optimization.
+            </p>
+            <figure class="visual-frame applications-frame">
+              <img src="static/images/applications.png" alt="JaxLayerLumos example application areas">
+            </figure>
+          </div>
+
+          <div class="example-list" aria-label="Example notebooks">
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/angle-variation.ipynb" target="_blank" rel="noopener noreferrer">Angle variation spectra</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/color-conversion.ipynb" target="_blank" rel="noopener noreferrer">Color conversion</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/color-exploration.ipynb" target="_blank" rel="noopener noreferrer">Thin-film color exploration</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/gradient-computation.ipynb" target="_blank" rel="noopener noreferrer">Gradient computation</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/effective-medium-approximation.ipynb" target="_blank" rel="noopener noreferrer">Effective medium approximation</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/graded-layers.ipynb" target="_blank" rel="noopener noreferrer">Graded layers</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/light-source-visualization.ipynb" target="_blank" rel="noopener noreferrer">Light-source visualization</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/n-k-extrapolation.ipynb" target="_blank" rel="noopener noreferrer">Optical constants</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/optimization-bayeso.ipynb" target="_blank" rel="noopener noreferrer">Bayesian optimization</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/optimization-dog.ipynb" target="_blank" rel="noopener noreferrer">DoG optimization</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/radar-design.ipynb" target="_blank" rel="noopener noreferrer">Radar design</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/solar-cell-analysis.ipynb" target="_blank" rel="noopener noreferrer">Solar-cell analysis</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/thickness-variation.ipynb" target="_blank" rel="noopener noreferrer">Thickness variation</a>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/triple-junction-solar-cells.ipynb" target="_blank" rel="noopener noreferrer">Triple-junction solar cells</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section">
+      <div class="container is-max-desktop">
+        <div class="section-heading">
+          <p class="section-kicker">Developer workflow</p>
+          <h2 class="section-title">Install, test, benchmark, and contribute.</h2>
+        </div>
+
+        <div class="info-grid">
+          <article class="info-panel">
+            <h3>Installation</h3>
+            <p>Install from PyPI or from source with optional extras.</p>
+            <pre><code>pip install jaxlayerlumos
+pip install .
+pip install .[dev]
+pip install .[benchmarking]
+pip install .[examples]</code></pre>
+          </article>
+          <article class="info-panel">
+            <h3>Testing and automation</h3>
+            <p>Install development requirements, then run the test suite locally. The project also uses GitHub Actions.</p>
+            <pre><code>pip install .[dev]
+pytest tests/</code></pre>
+          </article>
+          <article class="info-panel">
+            <h3>Benchmarking</h3>
+            <p>Benchmarking compares JaxLayerLumos with Ansys Optics, TMM-Fast, and tmm.</p>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/markdowns/COMPARISONS.md" target="_blank" rel="noopener noreferrer" class="text-link">Read comparisons</a>
+          </article>
+          <article class="info-panel">
+            <h3>Contributing</h3>
+            <p>Issues, enhancements, and pull requests are welcome through the project guidelines.</p>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/markdowns/CONTRIBUTING.md" target="_blank" rel="noopener noreferrer" class="text-link">View guidelines</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section section-tint">
+      <div class="container is-max-desktop">
+        <div class="section-grid materials-grid">
+          <div>
+            <p class="section-kicker">Supported materials</p>
+            <h2 class="section-title">A growing library for optical and RF properties.</h2>
+            <p class="section-copy">
+              Materials are specified using complex refractive indices or complex permittivities and permeabilities, with optical data from literature or user-provided measurements.
+            </p>
+            <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/markdowns/MATERIALS.md" target="_blank" rel="noopener noreferrer" class="text-link">Open MATERIALS.md</a>
+          </div>
+          <div class="material-cloud" aria-label="Examples of supported materials">
+            <span>Ag</span><span>Air</span><span>Al2O3</span><span>Al</span><span>aSi</span><span>Au</span>
+            <span>BK7</span><span>cSi</span><span>Cu</span><span>FusedSilica</span><span>GaAs</span><span>GaInP</span>
+            <span>GaP</span><span>Ge</span><span>InP</span><span>ITO</span><span>Sapphire</span><span>Si3N4</span>
+            <span>SiO2</span><span>TiN</span><span>TiO2</span><span>W</span><span>ZnO</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section compact-section">
+      <div class="container is-max-desktop">
+        <div class="disclosure-panel">
+          <p class="section-kicker">🤖 Declaration of Large Language Model Usage</p>
           <p>
-          JaxLayerLumos is open-source transfer-matrix method (TMM) software designed for scientists, engineers, and researchers in optics and photonics. It provides a powerful yet intuitive interface for calculating the reflection and transmission (RT) of light through multi-layer optical structures. By inputting the refractive index, thickness of each layer, and the frequency vector, users can analyze how light interacts with layered materials, including the option to adjust for incidence angles.
-          <br>
-          <br>
-
-          Our mission is to offer a lightweight, flexible, and fast alternative to commercial software, enabling users to perform complex optical simulations with ease. JaxLayerLumos is built with performance and usability in mind, facilitating the exploration of optical phenomena in research and development settings.
+            This project was initiated before large language models were incorporated into its development workflow. They are now used to support code revision, feature development, software maintenance, and text editing. In particular, we use Codex as an AI coding tool. All AI-assisted changes remain subject to author review and project maintenance standards.
           </p>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Features</h2>
-        <div class="content has-text-justified">
-          <ul>
-                <li>Gradient Calculation: Calculates the gradients over any variables involved in RT, powered by JAX.</li>
-                <li>Flexibility: Accommodates a wide range of materials and structures by allowing users to specify complex refractive indices, layer thicknesses, and frequency vectors.</li>
-                <li>Angle of Incidence Support: Expands simulation capabilities to include angled light incidence, providing more detailed analysis for advanced optical designs.</li>
-                <li>Open Source and Community-Driven: Encourages contributions and feedback from the community, ensuring continuous improvement and innovation.</li>
-                <li>Comprehensive Material Database: Includes a growing database of materials with their optical properties, streamlining the simulation setup process.</li>
-          </ul>
+    <section class="section compact-section section-tint" id="citation">
+      <div class="container is-max-desktop">
+        <div class="section-grid citation-grid">
+          <div>
+            <p class="section-kicker">Citation</p>
+            <h2 class="section-title">Use this BibTeX entry to cite JaxLayerLumos.</h2>
+            <div class="related-links">
+              <a href="https://github.com/JaxLayerLumos/JaxLayerLumos" target="_blank" rel="noopener noreferrer">GitHub</a>
+              <a href="https://pypi.org/project/jaxlayerlumos/" target="_blank" rel="noopener noreferrer">PyPI</a>
+              <a href="https://zenodo.org/doi/10.5281/zenodo.12602789" target="_blank" rel="noopener noreferrer">Zenodo</a>
+              <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/LICENSE" target="_blank" rel="noopener noreferrer">MIT License</a>
+            </div>
+          </div>
+          <pre class="citation-block"><code>@article{LiM2025joss,
+  author={Li, Mingxuan and Kim, Jungtaek and Leu, Paul W.},
+  title={{JaxLayerLumos}: A {JAX}-based Differentiable Optical
+    and Radio Frequency Simulator for Multilayer Structures},
+  journal={Journal of Open Source Software},
+  volume={10},
+  number={114},
+  pages={8572},
+  year={2025}
+}</code></pre>
         </div>
       </div>
-    </div>
-  </div>
-</section>
+    </section>
 
-
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Installation</h2>
-        <div class="content has-text-justified">
-          JaxLayerLumos can be easily installed by the following command using the <a href="https://pypi.org/project/jaxlayerlumos/" target="_blank">PyPI repository</a>.<br><br>
-
-          <code>pip install jaxlayerlumos</code><br><br>
-
-          Alternatively, JaxLayerLumos can be installed from source.<br><br>
-
-          <code>pip install .</code><br><br>
-
-          In addition, we support three installation modes, <code>dev</code>, <code>benchmarking</code>, and <code>examples</code>, where <code>dev</code> is defined for installing the packages required for development and software testing, <code>benchmarking</code> is for installing the packages required for benchmarking against differnt TMM software programs, and <code>examples</code> is needed for running the examples included in the <code>examples</code> directory. One of these modes can be used by commanding <code>pip install .[dev]</code>, <code>pip install .[benchmarking]</code>, or <code>pip install .[examples]</code>.
-        </div>
+    <section class="section compact-section acknowledgments">
+      <div class="container is-max-desktop">
+        <p class="section-kicker">Acknowledgments</p>
+        <p>
+          We sincerely thank all contributors and users for their support and feedback. This work is supported by the <a href="https://mds-rely.org" target="_blank" rel="noopener noreferrer">Center for Materials Data Science for Reliability and Degradation (MDS-Rely)</a>, an <a href="https://iucrc.nsf.gov" target="_blank" rel="noopener noreferrer">IUCRC</a> of the <a href="https://www.nsf.gov" target="_blank" rel="noopener noreferrer">National Science Foundation</a>. The University of Pittsburgh, Case Western Reserve University, and Carnegie Mellon University are participating institutions in MDS-Rely.
+        </p>
       </div>
+    </section>
+  </main>
+
+  <footer class="footer site-footer">
+    <div class="container is-max-desktop">
+      <p>
+        Built from the Academic Project Page Template, adopted from the <a href="https://nerfies.github.io" target="_blank" rel="noopener noreferrer">Nerfies</a> project page. Website content is licensed under a <a rel="license noopener noreferrer" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      </p>
     </div>
-  </div>
-</section>
-
-
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Examples</h2>
-        <div class="content has-text-justified">
-          A collection of examples in the <code>examples</code> directory exhibits various use cases and capabilities of our software. We provide the following examples:
-
-          <ol>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/angle-variation.ipynb" target="_blank">Reflection Spectra over Wavelengths Varying Incidence Angles</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/color-conversion.ipynb" target="_blank">Color Conversion</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/color-exploration.ipynb" target="_blank">Color Exploration with Thin-Film Structures</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/gradient-computation.ipynb" target="_blank">Gradient Computation</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/light-source-visualization.ipynb" target="_blank">Visualization of Light Sources</a></li>
-
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/n-k-extrapolation.ipynb" target="_blank">Plotting of Optical Constants</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/optimization-bayeso.ipynb" target="_blank">Thin-Film Structure Optimization with Bayesian Optimization</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/optimization-dog.ipynb" target="_blank">Thin-Film Structure Optimization with DoG Optimizer</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/radar-design.ipynb" target="_blank">Reflection Spectra over Frequencies for Radar Design</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/solar-cell-analysis.ipynb" target="_blank">Analysis of Solar Cells</a></li>
-
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/thickness-variation.ipynb" target="_blank">Transmission Spectra over Wavelengths Varying Thicknesses</a></li>
-                <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/examples/triple-junction-solar-cells.ipynb" target="_blank">Triple Junction Solar Cells</a></li>
-          </ol>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Software Testing and Test Automation</h2>
-        <div class="content has-text-justified">
-          We provide a variety of test files in the <code>tests</code> directory. Before running the test files, the required packages should be installed by using <code>pip install .[dev]</code>. They can be run by commanding <code>pytest tests/</code>. Moreover, these test files are automatically tested via GitHub Actions, of which the configuration is defined in <code>.github/workflows/pytest.yml</code>.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Supported Materials</h2>
-        <div class="content has-text-justified">
-          Materials supported by our software are described in <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/markdowns/MATERIALS.md" target="_blank">MATERIALS.md</a>. For example, Ag, Air, Al2O3, Al, aSi, Au, BK7, Cr, cSi, Cu, Fe, FusedSilica, GaAs, GaInP, GaP, Ge, InP, ITO, Mg, Mn, Ni, Pb, Pd, Pt, Sapphire, Si3N4, SiO2, TiN, TiO2, Ti, W, ZnO, Zn are included in JaxLayerLumos.<br><br>
-
-          JaxLayerLumos includes a growing library of materials, which are specified using either complex refractive indices or complex permittivities and permeabilities, which can be sourced from the literature or specified by users based on experimental data. When only complex refractive indices are provided, magnetic effects are assumed to be negligible, and the relative permeability is set to unity, an assumption typically valid at optical frequencies. In the RF and microwave regimes, the electromagnetic properties of metals are derived from their electrical conductivity and magnetic susceptibility, while dielectrics are generally modeled with constant permittivity and negligible loss.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Contributing Guidelines</h2>
-        <div class="content has-text-justified">
-          To contribute, please read <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/JOSS/markdowns/CONTRIBUTING.md" target="_blank">CONTRIBUTING.md</a> for our guidelines on issues, enhancements, and pull requests. Follow the outlined standards to keep the project consistent and collaborative.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section hero">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">License</h2>
-        <div class="content has-text-justified">
-          JaxLayerLumos is released under the <a href="https://github.com/JaxLayerLumos/JaxLayerLumos/blob/main/LICENSE" target="_blank">MIT License</a>, promoting open and unrestricted access to software for academic and commercial use.
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section hero is-light">
-  <div class="container is-max-desktop">
-    <div class="columns is-centered has-text-centered">
-      <div class="column is-four-fifths">
-        <h2 class="title is-3">Acknowledgments</h2>
-        <div class="content has-text-justified">
-          <ul>
-            <li>We sincerely thank all contributors and users for your support and feedback.</li>
-            <li>This work is supported by the <a href="https://mds-rely.org" target="_blank">Center for Materials Data Science for Reliability and Degradation (MDS-Rely)</a>, which is the <a href="https://iucrc.nsf.gov" target="_blank">Industry-University Cooperative Research Center (IUCRC)</a> of <a href="https://www.nsf.gov" target="_blank">National Science Foundation</a>.</li>
-            <li>The University of Pittsburgh, Case Western Reserve University, and Carnegie Mellon University are participating institutions in MDS-Rely.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Related Links</h2>
-    <ul>
-      <li><a href="https://github.com/JaxLayerLumos/JaxLayerLumos" target="_blank">GitHub: JaxLayerLumos</a></li>
-      <li><a href="https://pypi.org/project/jaxlayerlumos/" target="_blank">PyPI: JaxLayerLumos</a></li>
-      <li><a href="https://zenodo.org/doi/10.5281/zenodo.12602789" target="_blank">Zenodo: JaxLayerLumos</a></li>
-    </ul>
-  </div>
-</section>
-
-
-<section class="section" id="BibTeX">
-  <div class="container is-max-desktop content">
-    <h2 class="title">Citation</h2>
-    <pre><code>
-      @article{LiM2025joss,
-        author={Li, Mingxuan and Kim, Jungtaek and Leu, Paul W.},
-        title={{JaxLayerLumos}: A {JAX}-based Differentiable Optical and Radio Frequency Simulator for Multilayer Structures},
-        journal={Journal of Open Source Software},
-        volume={10},
-        number={114},
-        pages={8572},
-        year={2025}
-      }
-    </code></pre>
-  </div>
-</section>
-
-
-<footer class="footer">
-  <div class="container">
-    <div class="columns is-centered">
-      <div class="column is-8">
-        <div class="content">
-          <p>
-            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a> which was adopted from the <a href="https://nerfies.github.io" target="_blank">Nerfies</a> project page.
-            You are free to borrow the of this website, we just ask that you link back to this page in the footer. <br> This website is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/" target="_blank">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-          </p>
-        </div>
-      </div>
-    </div>
-  </div>
-</footer>
-
+  </footer>
 </body>
 </html>
