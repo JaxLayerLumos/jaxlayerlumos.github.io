@@ -331,6 +331,7 @@ pre {
 .feature-card p,
 .info-panel p,
 .disclosure-panel p,
+.contributors-panel p,
 .acknowledgments p,
 .note,
 .site-footer p {
@@ -603,6 +604,53 @@ pre {
   margin: 0;
 }
 
+.contributors-grid {
+  align-items: start;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: minmax(0, 0.75fr) minmax(360px, 1.25fr);
+}
+
+.contributors-panel p {
+  margin: 0;
+}
+
+.contributors-list {
+  display: grid;
+  gap: 0.65rem;
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+}
+
+.contributors-list li {
+  align-items: center;
+  background: var(--paper);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 0.75rem;
+  justify-content: space-between;
+  padding: 0.75rem 0.85rem;
+}
+
+.contributors-list a {
+  color: var(--cobalt);
+  font-weight: 800;
+}
+
+.contributors-list a:hover {
+  color: var(--teal-dark);
+  text-decoration: underline;
+}
+
+.contributors-list span {
+  color: var(--muted);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
 .acknowledgments {
   background: var(--paper);
 }
@@ -645,7 +693,8 @@ pre {
   .section-grid,
   .examples-grid,
   .materials-grid,
-  .citation-grid {
+  .citation-grid,
+  .contributors-grid {
     grid-template-columns: 1fr;
   }
 
