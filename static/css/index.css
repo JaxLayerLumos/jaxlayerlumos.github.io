@@ -635,7 +635,8 @@ pre {
   padding: 0.75rem 0.85rem;
 }
 
-.contributors-list a {
+.contributors-list a,
+.contributors-list strong {
   color: var(--cobalt);
   font-weight: 800;
 }
